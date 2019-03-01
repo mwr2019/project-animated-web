@@ -199,7 +199,7 @@ a.link{
 }
 
 .bookshelf {
-	position: absolute; left: 21.2%; top: 30%;
+	position: relative; left: 21.2%; top: 30%;
 	z-index: -1;
 }
 
