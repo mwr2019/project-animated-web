@@ -1,0 +1,56 @@
+body {
+  background-color: #B9BE95;
+    margin:0;
+    padding:0;
+}
+header {
+/*  background-image: url("red-lonely-chair-website-header-design.jpg");
+  background-repeat: no-repeat;
+*/
+  background-color: lightblue;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-shadow: #000 0 0 .2em;
+  height: 250px;
+  text-align: center;
+}
+header > img {
+  height: 230px;
+}
+header > h1 {
+    font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
+        fantasy;
+    margin: 2%;
+    display: inline-block;
+    opacity: 0.9;   
+}
+.footer {
+  background-color: lightblue;
+    clear: both;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    padding-left: 0px;
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+ul {
+  margin: 0;
+  padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+li {
+    float: left;
+  margin-left: 50px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
