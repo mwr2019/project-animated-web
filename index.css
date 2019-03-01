@@ -26,7 +26,7 @@ header > h1 {
     opacity: 0.9;   
 }
 .footer {
-  background-color: #843d00;
+  background-color: lightblue;
     clear: both;
     position: relative;
     height: 60px;
@@ -54,6 +54,7 @@ li {
     align-items: center;
     justify-content: center;
 }
+
 .hold{
   width: 1000px;
   margin: auto;
@@ -173,5 +174,3 @@ a.link{
 #insta img{
   width: 100%;
 }
-
-
