@@ -8,12 +8,12 @@ header {
 /*  background-image: url("red-lonely-chair-website-header-design.jpg");
   background-repeat: no-repeat;
 */
-  background-color: #9b3b00;
+  background-color: #F5FAFE;
   background-position: center;
   background-size: cover;
   color: #fff;
   text-shadow: #000 0 0 .2em;
-  height: 28%;
+  height: 22%;
   text-align: center;
 }
 header > img {
