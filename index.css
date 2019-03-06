@@ -2,7 +2,11 @@ body {
   background-color: #B9BE95;
     margin:0;
     padding:0;
+    overflow-x: hidden;
 }
+
+/*header*/
+
 header {
 /*  background-image: url("red-lonely-chair-website-header-design.jpg");
   background-repeat: no-repeat;
@@ -12,11 +16,11 @@ header {
   background-size: cover;
   color: #fff;
   text-shadow: #000 0 0 .2em;
-  height: 250px;
+  height: 28%;
   text-align: center;
 }
 header > img {
-  height: 230px;
+  height: 200px;
 }
 header > h1 {
     font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
@@ -26,16 +30,13 @@ header > h1 {
     opacity: 0.9;   
 }
 .footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #8e6754;
-  color: white;
-  text-align: center;
-}
-  
-    
+    background-color: lightblue;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
 }
 ul {
   margin: 0;
@@ -60,7 +61,7 @@ li {
   position: relative;
   display: block;
   height: 600px;
-}
+} 
 .shadow{
   position: absolute;
   width: 500px;
@@ -97,8 +98,7 @@ a.link{
   transition: transform 1s, left 1s;
   transform-origin: 100% 37.5%;
 }
-.page>.front,
-.page .back-holder,
+
 .page .back{
   height: 600px; /*page size */
   width: 500px;
@@ -173,8 +173,8 @@ a.link{
 }
 
 .zoomred {
-	position: absolute; left: 58%; top: 50%;
-	transition: transform .2s;
+  position: absolute; left: 58%; top: 50%;
+  transition: transform .2s;
 }
 .zoomred:hover {
   transform: scale(1.2);
@@ -182,8 +182,8 @@ a.link{
 
 }
 .zoomblue {
-	position: absolute; left: 46%; top: 50%;
-	transition: transform .2s;
+  position: absolute; left: 46%; top: 50%;
+  transition: transform .2s;
 }
 .zoomblue:hover {
   transform: scale(1.2);
@@ -191,19 +191,48 @@ a.link{
 
 }
 .zoomgreen {
-	position: absolute; left: 34%; top: 50%;
-	transition: transform .2s;
+  position: absolute; left: 34%; top: 50%;
+  transition: transform .2s;
 }
 .zoomgreen:hover {
   transform: scale(1.2);
   z-index: +5;
 }
+.bookalign {
+  text-align: center;
+}
 
 .bookshelf {
-	position: relative; left: 21.2%; top: 30%;
-	z-index: -1;
+  z-index: -1;
+}
+.mainarticle {
+  text-align: center;
+}
+
+/* main article */
+.mainarticle {
+  align-self: center;
+
+}
+.alignbilde {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
 
 
+.cursiveblock {
+  text-align: center;
+width: 80%;
+display: inline-block;
+}
+
+.cursiveTxt {
+font-style: italic;
+display: block;
+font-size: 12px;
+text-align: center;
+} 
 
 
