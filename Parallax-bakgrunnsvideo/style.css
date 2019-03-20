@@ -11,3 +11,7 @@
   filter: blur(0px);
   -webkit-filter: blur(0px);
 }
+
+#kilde {
+  content:url("../VIDEO/Background_loop.mp4");
+}
