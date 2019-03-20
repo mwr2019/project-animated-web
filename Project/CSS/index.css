@@ -10,7 +10,6 @@ header {
   background-position: center;
   background-size: cover;
   color: #fff;
-  text-shadow: #000 0 0 .2em;
   text-align: center;
 }
 header > img {
@@ -18,13 +17,6 @@ header > img {
   margin-top: 25px;
   margin-left: 200px;
   float: left;
-}
-header > h1 {
-    font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
-        fantasy;
-    margin: 2%;
-    display: inline-block;
-    opacity: 0.9;   
 }
 .logotext {
   height: 60px;
@@ -290,6 +282,7 @@ a.link{
 
 .bookshelf {
   z-index: -1;
+  margin-top: 50px;
 }
 .mainarticle {
   text-align: center;
