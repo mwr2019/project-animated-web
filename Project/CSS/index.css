@@ -36,25 +36,29 @@ header > h1 {
   overflow: hidden;
 }
 .topnav a {
+  background-color: grey; 
+  border: solid 1px #68c2e8;
+  color: white;
   float: left;
   display: block;
   color: #68c2e8;
   text-align: center;
-  padding: 3px 3px;
+  padding: 5px 5px;
   text-decoration: none;
   font-size: 17px;
-  margin-top: 60px;
-  margin-right: 10px;
-}
+  margin-top: 56px;
+  margin-right: 22px;
+  border-radius: 5px;
 
+}
 .topnav a:hover {
-  background-color: green;
+  background-color: white;
   color: blue;
 }
 
 .topnav a.active {
-  background-color: #969191;
-  color: #FFFFFF;
+  background-color: white;
+  color: black;
   opacity: .7;
 
 }
