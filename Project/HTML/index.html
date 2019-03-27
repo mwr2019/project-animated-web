@@ -1,66 +1,892 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="../CSS/index.css">
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <head>
-  <title></title>
+<div class="header">
+<title>Integrasjon</title>
+  <link href="OwlCarousel2-2.3.4\dist\assets\owl.carousel.css" rel="stylesheet" type="text/css">
+  <link href="OwlCarousel2-2.3.4\dist\assets\owl.theme.default.min.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+
+header {
+/*  background-image: url("red-lonely-chair-website-header-design.jpg");
+  background-repeat: no-repeat;
+*/
+  background-color: #F5FAFE;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 0%;
+  color: #fff;
+  text-shadow: #000 0 0 .2em;
+  height: 22%;
+  text-align: center;
+}
+header img {
+  height: 200px;
+}
+header > h1 {
+    font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
+        fantasy;
+    margin: 2%;
+    display: inline-block;
+    opacity: 0.9;   
+
+  }
+
+.img-fluid {
+  max-width:100%;
+  height:100%;
+  display:block;
+}
+
+.item{
+  height:500px;
+  margin-top: 200px;
+  padding:0px;
+
+
+}
+
+.item img{
+  z-index: 300;
+
+}
+
+
+.Hvitboks{
+  background: rgba(255,255,255, 0.8);
+  padding: 3% 2% 0.5% 2%;
+  opacity: 15%;
+}
+
+.bok2, .bok4, .bok5, .bok6, .bok7 {
+  width: 88%;
+  transition: 0.4s;
+  margin-top:60px;
+  z-index:1;
+}
+
+.bok1{
+
+  width: 88%;
+  transition: 0.4s;
+  margin-top:-27px;
+  z-index:1;
+}
+
+.bok3{
+  transition: 0.4s;
+  margin-top: -70px;
+  z-index:1000;
+
+}
+
+
+
+
+
+.bok1:hover, .bok2:hover, .bok3:hover, .bok4:hover, .bok5:hover, .bok6:hover, .bok7:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2); 
+  box-shadow: 0px 1px 40px 15px rgba(180, 136, 99, 1);
+   border-radius: 25px;
+  z-index: 1000;
+}
+
+.bilde {
+   z-index:100;
+   position:relative;
+   top:80px;
+   left:250px;
+   display:none;
+}
+
+.owl-stage{
+    padding:30px;
+    padding-bottom:90px;
+    overflow:visible;
+    
+} 
+
+.container {
+    position: absolute;
+    width:43%;
+    height: 50%;
+    top: 32%;
+    margin-top: -5.5%;
+    left:27%;
+    z-index: 10;
+
+}
+
+.knapp {
+    z-index: 1000;
+    position:fixed;
+    top:50%;
+    left:80%;
+    color:red;
+}
+
+#bakgrunn {
+    opacity:0.8;
+    background-color:#ccc;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+}
+
+
+
+
+.hold{
+  width: 1000px;
+  margin: auto;
+  position: relative;
+  bottom:300px;
+  display: block;
+  height: 600px;
+  z-index:500;
+}
+
+.shadow{
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  top: 225px;
+  height: 600px;
+  box-shadow: 6px 4px 10px 0px rgba(0,0,0, 0.7);
+}
+
+.page-holder{
+  height: 900px;
+  width: 1000px;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+a.link{
+  text-decoration: none;
+  color: white;
+  background: black;
+  padding: 10px 20px;
+  float: right;
+  right: 400px;
+  position: relative;
+}
+
+.page{
+  height: 200%;
+  width: 100%;
+  top: -50%;
+  left: 0%;
+  position: absolute;
+  overflow: hidden;
+  transform: rotateZ(-30deg);
+  transition: transform 1s, left 1s;
+  transform-origin: 100% 37.5%;
+}
+
+.page>.front,.page .back-holder, .page .back{
+  height: 600px; /*page size */
+  width: 500px;
+  position: absolute;
+  background-size: cover;
+  transition: transform 1s, left 1s;
+  background-color: black;
+  color: white;
+}
+
+.page>.front{
+  top: 37.5%;
+  left: 50%;
+  transform: rotateZ(30deg) translateX(0);
+  transform-origin: 100% 0%;
+  box-shadow: inset 10px 0 10px -8px #000000;
+}
+
+.page .back-holder{
+  left: 100%;
+  top: 0;
+  transition: left 1s, transform 1s;
+  transform-origin: 0% 0%;
+  transform: rotateZ(-60deg);
+}
+
+.page .back{
+  left: 0%;
+  top: 0;
+  transform: rotateZ(0deg);
+  transform-origin: 0% 0%;
+  transition: top 1s, left 1s;
+  box-shadow: inset -15px 0 22px -10px #000000;
+}
+
+.page .back:after{
+  content: ' ';
+  position: absolute;
+  height: 100%;
+  transform: rotateZ(-0.7deg);
+  transform-origin: 0% 100%;
+  width: 100%;
+  box-shadow: 10px 8px 10px -1px rgba(0,0,0, 0.8);
+}
+
+.page-holder:hover .page{
+  transform: rotateZ(0deg);
+  left: -50%;
+}
+
+.page-holder:hover .page>.front{
+  transform: rotateZ(0deg) translateX(100%);
+}
+
+.page-holder:hover .back-holder{
+  left: 0%;
+  transform: rotateZ(0deg);
+/*   transform: rotateZ(0deg);
+  top: 0; */
+}
+
+.page-holder:hover .back{
+  left: -100%;
+}
+
+.owl-carousel .owl-dots {
+    display: none !important;
+}
+
+.owl-carousel .owl-prev,
+.owl-carousel .owl-next {
+    position: absolute;
+    top: 90px;
+    width:50px;
+    height: 500px;
+    margin: auto !important;
+    font-size:20px;
+    background: rgba(255, 0, 255, 0.74);
+}
+
+.owl-carousel .owl-prev {
+    left: -40px;
+}
+
+.owl-carousel .owl-next {
+    right: -40px;
+}
+
+
+
+.owl-carousel .owl-prev, .owl-next {
+    display: none !important;
+}
+
+.mobilSide {
+    position:relative;
+    top:300px;
+    left:300px;
+}
+
+.bilde {
+ position:fixed;
+ top:25%;
+ left:12%;
+}
+
+.bokhylleDiv {
+  position:relative;
+  width: 36%;
+  bottom:0.1%;
+  left:32%;
+
+}
+
+.bokhylleBilde {
+  width:100%;
+  position: relative;
+}
+
+.BokshelfLeft {
+  width: 22.9%;
+  bottom:0%;
+  top: 0%;
+  z-index: 99;
+  left:-22.9%;
+  position: absolute;
+
+}
+
+.BokshelfRight {
+  width: 20.42%;
+  bottom:0%;
+  top: 0%;
+  z-index: 99;
+  left: 100%;
+  position: absolute;
+
+}
+
+}
+.footer {
+    background-color: #F5FAFE;
+    clear: both;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    padding-left: 0px;
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+/*.hold{
+  width: 1000px;
+  margin: auto;
+  position: relative;
+  display: block;
+  height: 600px;
+} */
+.shadow{
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  top: 225px;
+  height: 600px;
+  box-shadow: 6px 4px 10px 0px rgba(0,0,0, 0.7);
+}
+.page-holder{
+  height: 900px;
+  width: 1000px;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+
+}
+a.link{
+  text-decoration: none;
+  color: white;
+  background: black;
+  padding: 10px 20px;
+  float: right;
+  right: 400px;
+  position: relative;
+}
+.page{
+  height: 200%;
+  width: 100%;
+  top: -50%;
+  left: 0%;
+  position: absolute;
+  overflow: hidden;
+  transform: rotateZ(-30deg);
+  transition: transform 1s, left 1s;
+  transform-origin: 100% 37.5%;
+}
+
+.page .back{
+  height: 600px; /*page size */
+  width: 500px;
+  position: absolute;
+  background-size: cover;
+  transition: transform 1s, left 1s;
+  background-color: black;
+  color: white;
+}
+.page>.front{
+  top: 37.5%;
+  left: 50%;
+  transform: rotateZ(30deg) translateX(0);
+  transform-origin: 100% 0%;
+  box-shadow: inset 10px 0 10px -8px #000000;
+}
+.page .back-holder{
+  left: 100%;
+  top: 0;
+  transition: left 1s, transform 1s;
+  transform-origin: 0% 0%;
+  transform: rotateZ(-60deg);
+}
+.page .back{
+  left: 0%;
+  top: 0;
+  transform: rotateZ(0deg);
+  transform-origin: 0% 0%;
+  transition: top 1s, left 1s;
+  box-shadow: inset -15px 0 22px -10px #000000;
+}
+.page .back:after{
+  content: ' ';
+  position: absolute;
+  height: 100%;
+  transform: rotateZ(-0.7deg);
+  transform-origin: 0% 100%;
+  width: 100%;
+  box-shadow: 10px 8px 10px -1px rgba(0,0,0, 0.8);
+}
+.page-holder:hover .page{
+  transform: rotateZ(0deg);
+  left: -50%;
+}
+.page-holder:hover .page>.front{
+  transform: rotateZ(0deg) translateX(100%);
+}
+.page-holder:hover .back-holder{
+  left: 0%;
+  transform: rotateZ(0deg);
+/*   transform: rotateZ(0deg);
+  top: 0; */
+}
+.page-holder:hover .back{
+  left: -100%;
+}
+.bookalign {
+  text-align: center;
+}
+.mainarticle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* main article */
+.mainarticle {
+  align-self: center;
+
+}
+.alignbilde {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+
+.cursiveblock {
+  text-align: center;
+width: 80%;
+display: inline-block;
+}
+
+.cursiveTxt {
+font-style: italic;
+display: block;
+font-size: 12px;
+text-align: center;
+
+} 
+
+#myVid {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 14%;
+  min-width: 100%;
+  /*min-height: 100%;*/
+  width: 100%;
+  height: auto;
+  margin: auto;
+  z-index: -100;
+  filter: blur(0px);
+  -webkit-filter: blur(3px);
+}
+
+
+/*Oppdatert Side Svart Tema*/
+
+body {
+  background-color: #FFFFFF;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+header {
+  height: 150px;
+  background-color: #3f3d3d;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  margin-bottom: 3.5%;
+  text-align: center;
+}
+header > img {
+  height: 100px;
+  margin-top: 25px;
+  margin-left: 200px;
+  float: left;
+}
+.logotext {
+  height: 60px;
+  margin-left: 50px;
+  margin-top: 45px;
+  margin-right: 300px;
+}
+.topnav {
+  overflow: hidden;
+}
+.topnav a {
+  background-color: grey; 
+  border: solid 1px #68c2e8;
+  color: white;
+  float: left;
+  display: block;
+  color: #68c2e8;
+  text-align: center;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-top: 56px;
+  margin-right: 22px;
+  border-radius: 5px;
+
+}
+.topnav a:hover {
+  background-color: white;
+  color: blue;
+}
+
+.topnav a.active {
+  background-color: white;
+  color: black;
+  opacity: .7;
+
+}
+
+.topnav .search-container {
+  float: right;
+  margin-top: 48px;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  height: 32px;
+}
+.topnav .search-container button img {
+  height: 14px;
+  margin-top: 2px;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+.footer {
+    background-color: #3f3d3d;
+    color: white;
+    clear: both;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    padding-left: 0px;
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul {
+  margin: 0;
+  padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+li {
+    float: left;
+  margin-left: 50px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+}
+.mainarticle {
+  text-align: center;
+}
+
+/* main article */
+.mainarticle {
+  align-self: center;
+
+}
+.alignbilde {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+
+.cursiveblock {
+  text-align: center;
+width: 80%;
+display: inline-block;
+}
+
+.cursiveTxt {
+font-style: italic;
+display: block;
+font-size: 12px;
+text-align: center;
+} 
+
+#myVid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  z-index: -100;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
+
+
+
+
+  </style>
+
+
+
+
 </head>
 <body>
+
 <div class="header">
+
 <header>
-  <img src="../IMG/Logo_Owl1.png">
-  <img class="logotext" src="../IMG/Logo_Text1.png">
+  <img src="./SavePage_files/Logo_Owl1.png">
+  <img class="logotext" src="./SavePage_files/Logo_Text1.png">
 
   <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
+  <a class="active" href="https://mwr2019.github.io/project-animated-web/Project/HTML/index#home">Home</a>
+  <a href="https://mwr2019.github.io/project-animated-web/Project/HTML/index#about">About</a>
+  <a href="https://mwr2019.github.io/project-animated-web/Project/HTML/index#contact">Contact</a>
   <div class="search-container">
-    <form action="/action_page.php">
+    <form action="https://mwr2019.github.io/action_page.php">
       <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><img src="iconmonstr-magnifier-4-24.png"><i class="fa fa-search"></i></button>
+      <button type="submit"><img src="./SavePage_files/iconmonstr-magnifier-4-24.png"><i class="fa fa-search"></i></button>
     </form>
   </div>
 </div>
 </header>
+
+
+    <!-- Bokhyllen -->
+    <div class="bokhylleDiv">
+
+        <img src="../IMG/Shelf_Middle.png" class="bokhylleBilde" alt="Book is Shelf"> 
+        <img src="../IMG/Shelf_Left.png" class="BokshelfLeft" alt="Book is Shelf"> 
+        <img src="../IMG/Shelf_Right.png" class="BokshelfRight" alt="Book is Shelf"> 
+        
+    </div>
+    <div class="container">
+  <div class="owl-carousel owl-theme">
+
+    <div class="item"><div class="bok1"> <img src="./SavePage_files/BookHistorie.png" alt="Book is Shelf">  </div></div>
+    <div class="item"><div class="bok2"> <img src="../IMG/BookRed.png" alt="Book is Shelf"></div></div>
+    <div class="item"><div class="bok3"> <img src="../IMG/BookJus.png" width="200" height="300" alt="Book is Shelf"> </div></div>
+    <div class="item"><div class="bok4"> <img src="../IMG/BookBlue.png" alt="Book is Shelf"> </div></div>
+    <div class="item"><div class="bok5"> <img src="../IMG/BookRed.png" alt="Book is Shelf"> </div></div>
+    <div class="item"><div class="bok6"> <img src="../IMG/BookGreen.png" alt="Book is Shelf"> </div></div>
+    <div class="item"><div class="bok7"> <img src="../IMG/BookBlue.png" alt="Book is Shelf"> </div></div>
+
 </div>
+</div>
+
+
+<!--Bok åpnet-->
+<div class="bilde">
+    <!--Den grå bakgrunn-->
+<div id="bakgrunn"></div>
+
+<!--Bladet/boken som er åpnet -->
+<div class='hold'>
+  <div class='shadow'></div>
+  <div id='lower' class='page-holder'>
+    <div class='page'>
+      <div class='front' style="background-image: url('Crackle.png')">
+        <div class='back-holder'>
+          <div class='back' style="background-image: url('Fel.png')"></div>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <div id='upper' class='page-holder'>
+    <div class='page'>
+      <div class='front' style="background-image: url('HistorieCover.png')">
+        <div class='back-holder'>
+          <div class='back' style="background-image: url('Fel.png')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Kryss vekk knapp -->
+<button class="knapp"> X </button>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="OwlCarousel2-2.3.4\docs\assets\vendors\jquery.min.js" type="text/javascript"></script>
+<script src="OwlCarousel2-2.3.4\dist\owl.carousel.js" type="text/javascript"></script>
+
+<script type="text/javascript">
   
-  <div class="bookalign">
-<div class="bookshelf">
-  <img src="../IMG/BookShelf.png" alt="Book is Shelf"> 
-</div>        
-<div class="zoomblue">
-  <img src="../IMG/BookBlue.png" alt="Book is Blue">
-</div>  
-<div class="zoomred">
-  <img src="../IMG/BookRed.png" alt="Book is Blue">
-</div>  
-<div class="zoomgreen">
-  <img src="../IMG/BookGreen.png" alt="Book is Blue">
-</div>  
-</div>
+$(document).ready(function() {
+    $(".bok1").click(function(){
+        $(".bilde").show();
+    
+    });
+});
+
+$(document).ready(function() {
+    $(".bok2").click(function(){
+        $(".bilde").show();
+    
+    });
+});
+
+$(document).ready(function() {
+    $(".bok3").click(function(){
+        $(".bilde").show();
+    
+    });
+});
+
+$(document).ready(function() {
+    $(".bok4").click(function(){
+        $(".bilde").show();
+    
+    });
+});
+
+$(document).ready(function() {
+    $(".bok5").click(function(){
+        $(".bilde").show();
+    
+    });
+});
+
+$(document).ready(function() {
+    $(".bok6").click(function(){
+        $(".bilde").show();
+    
+    });
+});
+
+$(document).ready(function() {
+    $(".bok7").click(function(){
+        $(".bilde").show();
+    
+    });
+});
+
+$(document).ready(function() {
+    $(".knapp").click(function(){
+        $(".bilde").hide();
+    
+    });
+});
+
+$(document).ready(function() {
+    $("#bakgrunn").click(function(){
+        $(".bilde").hide();
+    
+    });
+});
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:20,
+    nav:true,
+    responsive:{
+        90:{
+            items:1
+        },
+        100:{
+            items:3
+        },
+        500:{
+            items:4
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+
+</script>
+
 <div class="mainarticle">
   <pre> </pre>
-  <img src="../IMG/school.jpeg" alt="skole bilde" class="alignbilde">
+
+  <div class="Hvitboks">
+  <img src="./SavePage_files/school.jpeg" alt="skole bilde" class="alignbilde">
 <div class="cursiveblock">
   <p class="cursiveTxt">
     "Universitet i bergen, som har vunnet 4 grammys og 1 fredhets pris"
     </p>
+
+  
     <h2> Random skole </h2>
 Vi vil at studentene våre skal vite hvor de er på vei, og være godt rustet til
 yrkeslivet som møter dem etter studiene. Derfor sørger vi for at studentene våre får innblikk i arbeidslivet under hele utdanningen Vi har praksis- og mentorordninger som sørger for både faglig og personlig kontakt mellom student og arbeidsliv.
-</br>
+<br>
 Randomskole er ikke et universitet som bare har nesa i bøkene. Vi har blikket rettet fremover og vil bidra til at våre studenter faktisk kan skape morgendagens løsninger. Hos oss er det møtet mellom teori og praksis som står i fokus. Derfor har alliert vi oss med arbeidslivet, og derfor allierer arbeidslivet seg med oss.
-</br>
+<br>
 <h2>Studentene er hjertet </h2>
  i randomskole er studentene hjerte. Det er engasjementet for studentene som kjennetegner oss. randomskole skal ha et bredt tilbud og store muligheter, men samtidig tilby nær kontakt og kort vei til nærmeste rådgiver.
 Alle våre 8 campuser skal være trygge og gode steder å være, og studentene skal vite at det alltid finnes noen der for å hjelpe dem. Enten det er med en spesielt krevende oppgave eller veiledning mot fremtidig yrke.
 <h2> Framtidens arbeidskraft </h2>
 Vårt mål som universitet er å skape verdier både for den enkelte student og for næringslivet, offentlig sektor og samfunnslivet for øvrig. Dette gjør vi med våre aller beste virkemidler; utdanning og forskning.
 Vi har tett dialog med offentlig sektor og næringslivet, både på nye og allerede etablerte arenaer, slik at vi forstår hvilke behov som oppstår og hvilke utfordringer vi må løse. Det er derfor våre studier er moderne, oppdaterte og fremtidsrettede. Studentene har tett kontakt med arbeidslivet, og er godt rustet til å gå ut i yrkeslivet når studiene er over. Randomskole utdanner arbeidstakerne Norge søker
-</p>
+<p></p>
+</div>
 </div>
   </div>
-</div>
+
 
 <div class="footer">
 <ul>
@@ -68,17 +894,19 @@ Vi har tett dialog med offentlig sektor og næringslivet, både på nye og aller
   <li>Privacy Policy</li>
   <li>Terms of Use</li>
   <li>Social Media:</li>
-  <li><a href="header.html"><img src="../IMG/ikon_facebook.png"></a></li>
-  <li><a href="header.html"><img src="../IMG/ikon_instagram2.png"></a></li>
-  <li><a href="header.html"><img src="../IMG/iconmonstr-twitter-1-32.png"></a></li>
+  <li><a href="https://mwr2019.github.io/project-animated-web/Project/HTML/header.html"><img src="./SavePage_files/ikon_facebook.png"></a></li>
+  <li><a href="https://mwr2019.github.io/project-animated-web/Project/HTML/header.html"><img src="./SavePage_files/ikon_instagram2.png"></a></li>
+  <li><a href="https://mwr2019.github.io/project-animated-web/Project/HTML/header.html"><img src="./SavePage_files/iconmonstr-twitter-1-32.png"></a></li>
 
 
 </ul>
 </div>
 
-<video autoplay muted loop id="myVid">
-<source src="../VIDEO/Background_loop.mp4" type="video/mp4">
+<video autoplay="" muted="" loop="" id="myVid">
+<source src="Background_loop.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
+
+
 </body>
 </html>
