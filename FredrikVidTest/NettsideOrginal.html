@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<div class="header">
+<title>Finalsheet2</title>
+  <link href="OwlCarousel2-2.3.4\owl.carousel.css" rel="stylesheet" type="text/css">
+  <link href="OwlCarousel2-2.3.4\owl.theme.default.min.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+
+
+html, body { height: 100%; width: 100%; margin: 0; }
+
+
+
+.img-fluid {
+  max-width:100%;
+  height:100%;
+  display:block;
+}
+
+.item img{
+  z-index: 300;
+  position: relative;
+
+}
+
+
+.Hvitboks{
+  background: rgba(255,255,255, 0.8);
+  padding: 3% 2% 0.5% 2%;
+  opacity: 15%;
+   text-align: center;
+    align-self: center;
+}
+
+
+.item {
+  position:relative;
+  margin-top:50%;;
+}
+
+.item > .bok2 img{
+  margin-top:-85%;
+  width: 75%;
+}
+
+.item > .bok1 img{
+  margin-top:-70%;
+}
+
+.item > .bok3 img{
+  margin-top:-100%;
+  width:90%;
+}
+
+.item > .bok4 img{
+  margin-top:-12%;
+}
+
+.item > .bok5 img{
+  margin-top:-60%;
+  width: 50%;
+}
+
+.item > .bok6 img{
+  margin-top:-5%;
+  left: -27%;
+  width: 90%;
+}
+
+.item > .bok7 img{
+  margin-top:-100%;
+  left: -19%;
+  width: 90%;
+}
+
+
+.bok1 img:hover, .bok2 img:hover, .bok3 img:hover, .bok4 img:hover, .bok5 img:hover, .bok6 img:hover, .bok7 img:hover {
+box-shadow: -2px 10px 30px 20px rgba(180, 136, 99, 1), rgba(180, 136, 99, 1) -3px 20px 15px 10px inset;
+}
+
+
+
+.bok1, .bok2, .bok3, .bok4, .bok5, .bok6, .bok7 {
+  transition: 0.4s;
+  margin-top:60px;
+  z-index:1;
+}
+
+
+.bok1:hover, .bok2:hover, .bok3:hover, .bok4:hover, .bok5:hover, .bok6:hover, .bok7:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
+  z-index: 1000;
+}
+
+.bilde {
+    z-index:999;
+    position:fixed;
+   left:250px;
+   display:none;
+}
+
+.owl-stage{
+    padding:30px;
+    overflow:visible;
+}
+
+.knapp {
+    z-index: 1000;
+    position:fixed;
+    top:18.9%;
+    left:79%;
+    color:red;
+}
+
+#bakgrunn {
+    opacity:0.8;
+    background-color:#ccc;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+}
+
+.hold{
+  width: 1000px;
+  margin: auto;
+  position: fixed;
+  bottom:300px;
+  display: block;
+  height: 600px;
+}
+
+.shadow{
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  top: 225px;
+  height: 600px;
+  box-shadow: 6px 4px 10px 0px rgba(0,0,0, 0.7);
+}
+
+.page-holder{
+  height: 900px;
+  width: 1000px;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+a.link{
+  text-decoration: none;
+  color: white;
+  background: black;
+  padding: 10px 20px;
+  float: right;
+  right: 400px;
+  position: relative;
+}
+
+.page{
+  height: 200%;
+  width: 100%;
+  top: -50%;
+  left: 0%;
+  position: absolute;
+  overflow: hidden;
+  transform: rotateZ(-30deg);
+  transition: transform 1s, left 1s;
+  transform-origin: 100% 37.5%;
+}
+
+.page>.front,.page .back-holder, .page .back{
+  height: 600px; /*page size */
+  width: 500px;
+  position: absolute;
+  background-size: cover;
+  transition: transform 1s, left 1s;
+  background-color: black;
+  color: white;
+}
+
+.page>.front{
+  top: 37.5%;
+  left: 50%;
+  transform: rotateZ(30deg) translateX(0);
+  transform-origin: 100% 0%;
+  box-shadow: inset 10px 0 10px -8px #000000;
+}
+
+.page .back-holder{
+  left: 100%;
+  top: 0;
+  transition: left 1s, transform 1s;
+  transform-origin: 0% 0%;
+  transform: rotateZ(-60deg);
+}
+
+.page .back{
+  left: 0%;
+  top: 0;
+  transform: rotateZ(0deg);
+  transform-origin: 0% 0%;
+  transition: top 1s, left 1s;
+  box-shadow: inset -15px 0 22px -10px #000000;
+}
+
+.page .back:after{
+  content: ' ';
+  position: absolute;
+  height: 100%;
+  transform: rotateZ(-0.7deg);
+  transform-origin: 0% 100%;
+  width: 100%;
+  box-shadow: 10px 8px 10px -1px rgba(0,0,0, 0.8);
+}
+
+.page-holder:hover .page{
+  transform: rotateZ(0deg);
+  left: -50%;
+}
+
+.page-holder:hover .page>.front{
+  transform: rotateZ(0deg) translateX(100%);
+}
+
+.page-holder:hover .back-holder{
+  left: 0%;
+  transform: rotateZ(0deg);
+/*   transform: rotateZ(0deg);
+  top: 0; */
+}
+
+.page-holder:hover .back{
+  left: -100%;
+}
+
+
+
+
+
+
+
+
+.owl-carousel .owl-dots {
+    display: none !important;
+}
+
+.owl-carousel .owl-prev,
+.owl-carousel .owl-next {
+    position: absolute;
+    top: 10%;
+    width:0px;
+    height: 0px;
+    margin: auto !important;
+    font-size:20px;
+    background: rgba(255, 0, 255, 0.74);
+}
+
+.owl-carousel .owl-prev {
+    left: -40px;
+}
+
+.owl-carousel .owl-next {
+    right: -40px;
+}
+
+
+.bokhylleDiv {
+  position:relative;
+  width: 36%;
+  bottom:0.1%;
+  left:32%;
+
+}
+
+.bokhylleBilde {
+  width:100%;
+  position: relative;
+}
+
+.BokshelfLeft {
+  width: 22.9%;
+  bottom:0%;
+  top: 0%;
+  z-index: 99;
+  left:-22.9%;
+  position: absolute;
+
+}
+
+.BokshelfRight {
+  width: 20.42%;
+  bottom:0%;
+  top: 0%;
+  z-index: 99;
+  left: 100%;
+  position: absolute;
+
+}
+
+
+.bookalign {
+  text-align: center;
+}
+
+/* main article */
+
+.alignbilde {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+
+.cursiveblock {
+  text-align: center;
+width: 80%;
+display: inline-block;
+}
+
+.cursiveTxt {
+font-style: italic;
+display: block;
+font-size: 12px;
+text-align: center;
+
+}
+
+
+/*Oppdatert Side Svart Tema*/
+
+body {
+  background-color: #FFFFFF;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+header {
+  height: 150px;
+  background-color: #3f3d3d;
+  color: #fff;
+  margin-bottom: 3.5%;
+  text-align: center;
+}
+
+.logotext {
+    height: 50%;
+    margin-left: 0.5%;
+    margin-right: 15%;
+    margin-bottom:1%;
+}
+
+.uglelogo{
+  height: 70%;
+    margin-left: 13%;
+    margin-right: 1%;
+    margin-top:1%;
+}
+
+.topnav {
+  overflow: hidden;
+}
+.topnav a {
+  background-color: grey;
+  border: solid 1px #68c2e8;
+  color: white;
+  float: left;
+  display: block;
+  color: #68c2e8;
+  text-align: center;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-top: 56px;
+  margin-right: 22px;
+  border-radius: 5px;
+
+}
+.topnav a:hover {
+  background-color: white;
+  color: blue;
+}
+
+.topnav a.active {
+  background-color: white;
+  color: black;
+  opacity: .7;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.container{
+    position:relative;
+    width:40%;
+    margin:0 auto;
+    margin-top: 4%;
+    z-index: 1;
+    background-image:url(IMG/BookShelf.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding:13%;
+    padding-bottom: 40px;
+}
+
+
+@media screen and (max-width: 700px) {
+  .topnav .search-container {
+    float: none;
+  }
+
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+  .containerMobil{
+    display:block;
+  }
+  .hold {
+    display:none;
+  }
+
+  .knapp {
+     top:8%;
+    left:85%;
+  }
+
+  .owl-carousel .owl-prev, .owl-next {
+    display: none !important;
+}
+
+.container {
+  left:-18%;
+  width:80%;
+  padding:27%;
+}
+
+.mobilbakgrunn{
+  z-index:-1;
+  background-image:url(IMG/bakgrunnMobil.jpg);
+  background-repeat: no-repeat;
+  background-size:200%;
+}
+
+
+
+
+.uglelogo{
+  display:none;
+}
+
+header {
+  height:50px;
+  margin-bottom:-4%;
+}
+
+.logotext{
+  height: 60%;
+margin-top:2%;
+margin-left:10%;
+}
+
+  .footer {
+    position: relative;
+    height: 5%;
+    max-width: 100%;
+    font-size: 10px;
+    margin-bottom: -50px;
+  }
+
+
+
+                          /*bøkene når hylla blir mindre enn 700. 4 i hylle*/
+
+  .item > .bok2 img{
+  margin-top:-85%;
+  width: 60%;
+}
+
+.item > .bok1 img{
+  margin-top:-90%;
+  width: 85%;
+}
+
+.item > .bok3 img{
+  margin-top:-110%;
+  width:75%;
+}
+
+.item > .bok4 img{
+  margin-top:-32%;
+  width:85%;
+}
+
+.item > .bok5 img{
+  margin-top:-95%;
+  width: 45%;
+}
+
+.item > .bok6 img{
+  margin-top:-25%;
+  left: -27%;
+  width: 75%;
+}
+
+.item > .bok7 img{
+  margin-top:-105%;
+  left: -19%;
+  width: 75%;
+}
+
+}
+
+@media screen and (min-width: 400px){
+  .containerMobil{
+    height:95%;
+  }
+}
+
+@media screen and (min-width: 700px){
+
+.containerMobil{
+  display:none;
+}
+
+ .bakgrunnsbildeMobil{
+    display:none;
+  }
+
+}
+
+@media screen and (max-width: 400px){
+
+  .containerMobil{
+    height: 70%;
+  }
+
+   .Hvitboks{
+    margin-top:-20%;
+  }
+
+                                      /* Bøkene blir mindre etter 400. 3 i hylle */
+
+  .item > .bok2 img{
+  margin-top:-85%;
+  width: 60%;
+}
+
+.item > .bok1 img{
+  margin-top:-125%;
+  width: 70%;
+}
+
+.item > .bok3 img{
+  margin-top:-110%;
+  width:75%;
+}
+
+.item > .bok4 img{
+  margin-top:-32%;
+  width:85%;
+}
+
+.item > .bok5 img{
+  margin-top:-95%;
+  width: 45%;
+}
+
+.item > .bok6 img{
+  margin-top:-25%;
+  left: -27%;
+  width: 75%;
+}
+
+.item > .bok7 img{
+  margin-top:-105%;
+  left: -19%;
+  width: 75%;
+}
+
+
+
+}
+
+
+.footer {
+    background-color: #3f3d3d;
+    color: white;
+    clear: both;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    padding-left: 0px;
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul {
+  margin: 0;
+  padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+li {
+    float: left;
+  margin-left: 50px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.school{
+  width: 70%;
+}
+
+.owl-carousel .owl-dots {
+    display: none !important;
+}
+
+/* main article */
+
+.alignbilde {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+
+.cursiveblock {
+  text-align: center;
+width: 80%;
+}
+
+.cursiveTxt {
+font-style: italic;
+display: block;
+font-size: 12px;
+text-align: center;
+}
+
+#myVid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  z-index: -100;
+
+}
+
+
+
+.containerMobil {
+  position:fixed;
+  width:100%;
+background-color:blue;
+left:0%;
+top:5%;
+transform: translate(-50% -50%);
+perspective: 1000px;
+background-image: url('Crackle.png');
+background-repeat:no-repeat;
+background-size:100%;
+  }
+
+.containerMobil > .coverMobil, .cover2Mobil {
+    width:100%;
+    height: 100%;
+    position:absolute;
+    transform:rotateY(0deg);
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: all .5s ease-in;
+    background-repeat:no-repeat;
+background-size:100%;
+}
+  .coverMobil{
+background-image: url('HistorieCover.png');
+z-index:2;
+background-color:red;
+  }
+
+    .cover2Mobil{
+    background-image: url('Fel.png');
+    z-index:1;
+    background-color:yellow;
+  }
+
+  .owl-carousel .owl-prev,
+.owl-carousel .owl-next {
+    position: absolute;
+    bottom:45%;
+    width:10%;
+    height: 10%
+    margin: auto !important;
+    font-size:20px;
+    background-color:red;
+}
+
+ .owl-prev img {
+  width:70%;
+}
+
+ .owl-next img {
+  width:70%;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+    left: -15%;
+}
+
+.owl-carousel .owl-nav .owl-next {
+    right: -15%;
+}
+
+.bakgrunnsbildeMobil{
+    position: fixed;
+  right: 0;
+  top:-3%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 120%;
+  height: 40%;
+  margin: auto;
+  z-index: -100;
+}
+
+  </style>
+
+
+
+
+</head>
+<body>
+
+
+
+<header>
+  <img class = "uglelogo" src="IMG/Logo_Owl1.png">
+  <img class="logotext" src="IMG/Logo_Text1.png">
+</header>
+
+
+
+    <div class="mobilbakgrunn">
+     <div class="container">
+
+  <div class="owl-carousel owl-theme">
+
+    <div class="item"><div class="bok1"> <img src="IMG/bok7.png" alt="Book is Shelf">  </div></div>
+    <div class="item"><div class="bok2"> <img src="IMG/bok5.png" alt="Book is Shelf"> </div></div>
+    <div class="item"><div class="bok3"> <img src="IMG/bok6.png" alt="Book is Shelf"> </div></div>
+    <div class="item"><div class="bok4"> <img src="IMG/BokHistorie.png" alt="Book is Shelf"> </div></div>
+    <div class="item"><div class="bok5"> <img src="IMG/bok2.png" alt="Book is Shelf"> </div></div>
+    <div class="item"><div class="bok6"> <img src="IMG/BookJus.png" alt="Book is Shelf"> </div></div>
+    <div class="item"><div class="bok7"> <img src="IMG/bok4.png" alt="Book is Shelf"> </div></div>
+
+
+    <!-- Bokhyllen -->
+
+    </div>
+</div>
+</div>
+
+<!--Bok åpnet-->
+<div class="bilde">
+    <!--Den grå bakgrunn-->
+<div id="bakgrunn"></div>
+
+<!--Bladet/boken som er åpnet -->
+<div class='hold'>
+  <div class='shadow'></div>
+  <div id='lower' class='page-holder'>
+    <div class='page'>
+      <div class='front' style="background-image: url('IMG/Crackle.png')">
+        <div class='back-holder'>
+          <div class='back' style="background-image: url('IMG/Fel.png')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id='upper' class='page-holder'>
+    <div class='page'>
+      <div class='front' style="background-image: url('IMG/HistorieCover.png')">
+        <div class='back-holder'>
+          <div class='back' style="background-image: url('IMG/Fel.png')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Kryss vekk knapp -->
+<button class="knapp"> X </button>
+
+<div class = "containerMobil">
+  <div class="coverMobil">
+
+  </div>
+
+  <div class="cover2Mobil"></div>
+
+</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="OwlCarousel2-2.3.4\jquery.min.js" type="text/javascript"></script>
+<script src="OwlCarousel2-2.3.4\owl.carousel.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $(".bok1").click(function(){
+        $(".bilde").show();
+
+    });
+});
+
+$(document).ready(function() {
+    $(".bok2").click(function(){
+        $(".bilde").show();
+
+    });
+});
+
+$(document).ready(function() {
+    $(".bok3").click(function(){
+        $(".bilde").show();
+
+    });
+});
+
+$(document).ready(function() {
+    $(".bok4").click(function(){
+        $(".bilde").show();
+
+    });
+});
+
+$(document).ready(function() {
+    $(".bok5").click(function(){
+        $(".bilde").show();
+
+    });
+});
+
+$(document).ready(function() {
+    $(".bok6").click(function(){
+        $(".bilde").show();
+
+    });
+});
+
+$(document).ready(function() {
+    $(".bok7").click(function(){
+        $(".bilde").show();
+
+    });
+});
+
+$(document).ready(function() {
+    $(".knapp").click(function(){
+        $(".bilde").hide();
+        $(".coverMobil").css("transform","rotateY(0deg)");
+        $(".cover2Mobil").css("transform","rotateY(0deg)");
+    });
+});
+
+$(document).ready(function() {
+    $("#bakgrunn").click(function(){
+        $(".bilde").hide();
+
+    });
+});
+
+$('.owl-carousel').owlCarousel({
+  navText : ["<img src='IMG/Pil.png'>","<img src='IMG/Pil.png' style='transform: scaleX(-1)'>"],
+  rewindNav : true,
+    loop:true,
+    margin:27,
+    nav:true,
+    responsive:{
+      300:{
+            items:3,
+        margin:1,
+        },
+        400:{
+            items:4,
+
+        },
+        700:{
+            items:5,
+        }
+    }
+});
+
+    $( ".cover2Mobil" ).click(function() {
+        $(this).css("transform","rotateY(-180deg)");
+});
+
+    $( ".coverMobil" ).click(function() {
+        $(this).css("transform","rotateY(-180deg)");
+});
+
+</script>
+
+
+  <div class="Hvitboks">
+
+    <img class="school" src="IMG/school.jpeg">
+
+
+<div class="cursiveblock">
+  <p class="cursiveTxt">
+    "Universitet i bergen, som har vunnet 4 grammys og 1 fredhets pris"
+    </p>
+
+
+    <h2> Random skole </h2>
+Vi vil at studentene våre skal vite hvor de er på vei, og være godt rustet til
+yrkeslivet som møter dem etter studiene. Derfor sørger vi for at studentene våre får innblikk i arbeidslivet under hele utdanningen Vi har praksis- og mentorordninger som sørger for både faglig og personlig kontakt mellom student og arbeidsliv.
+<br>
+Randomskole er ikke et universitet som bare har nesa i bøkene. Vi har blikket rettet fremover og vil bidra til at våre studenter faktisk kan skape morgendagens løsninger. Hos oss er det møtet mellom teori og praksis som står i fokus. Derfor har alliert vi oss med arbeidslivet, og derfor allierer arbeidslivet seg med oss.
+<br>
+<h2>Studentene er hjertet </h2>
+ i randomskole er studentene hjerte. Det er engasjementet for studentene som kjennetegner oss. randomskole skal ha et bredt tilbud og store muligheter, men samtidig tilby nær kontakt og kort vei til nærmeste rådgiver.
+Alle våre 8 campuser skal være trygge og gode steder å være, og studentene skal vite at det alltid finnes noen der for å hjelpe dem. Enten det er med en spesielt krevende oppgave eller veiledning mot fremtidig yrke.
+<h2> Framtidens arbeidskraft </h2>
+Vårt mål som universitet er å skape verdier både for den enkelte student og for næringslivet, offentlig sektor og samfunnslivet for øvrig. Dette gjør vi med våre aller beste virkemidler; utdanning og forskning.
+Vi har tett dialog med offentlig sektor og næringslivet, både på nye og allerede etablerte arenaer, slik at vi forstår hvilke behov som oppstår og hvilke utfordringer vi må løse. Det er derfor våre studier er moderne, oppdaterte og fremtidsrettede. Studentene har tett kontakt med arbeidslivet, og er godt rustet til å gå ut i yrkeslivet når studiene er over. Randomskole utdanner arbeidstakerne Norge søker
+<p></p>
+</div>
+</div>
+
+
+
+<div class="footer">
+<ul>
+  <li>© Copyright 2019 USN Inc. All rights reserved</li>
+  <li>Privacy Policy</li>
+  <li>Terms of Use</li>
+  <li>Social Media:</li>
+  <li><a href="https://mwr2019.github.io/project-animated-web/Project/HTML/header.html"><img src="IMG/ikon_facebook.png"></a></li>
+  <li><a href="https://mwr2019.github.io/project-animated-web/Project/HTML/header.html"><img src="IMG/ikon_instagram2.png"></a></li>
+  <li><a href="https://mwr2019.github.io/project-animated-web/Project/HTML/header.html"><img src="IMG/iconmonstr-twitter-1-32.png"></a></li>
+
+
+</ul>
+</div>
+
+<video autoplay muted loop id="myVid">
+<source type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<script type="text/javascript">
+
+  var vidSrc = document.getElementById("myVid");
+
+  var isMobile = {
+      Android: function() {
+          return navigator.userAgent.match(/Android/i);
+      },
+      BlackBerry: function() {
+          return navigator.userAgent.match(/BlackBerry/i);
+      },
+      iOS: function() {
+          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+      },
+      Opera: function() {
+          return navigator.userAgent.match(/Opera Mini/i);
+      },
+      Windows: function() {
+          return navigator.userAgent.match(/IEMobile/i);
+      },
+      any: function() {
+          return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+      }
+  };
+
+  if(isMobile.any()) {
+    console.log("Dette er en mobil så videoen vises ikke");
+  }
+
+  else {
+    vidSrc.src = "Background_loop.mp4";
+  }
+
+</script>
+
+
+</body>
+</html>
